@@ -7,6 +7,7 @@ public class BattleShip {
         Scanner scan = new Scanner(System.in);
 
         while (s) {
+            
             System.out.println("'a' to add a new ship, 'b' to see the board, 'p' to play, or 'q' to quit.");
             String s2 = scan.nextLine();
 
@@ -44,6 +45,10 @@ public class BattleShip {
                     System.out.println("Ok let's play!");
                     boolean sentinel = true;
                     while (sentinel) {
+                        if (gBoard.winCheck()) {
+                            System.out.println("You won!");
+                            System.exit(0);
+                        }
                         System.out.println("Press 's' to shoot at a square, 'b' to see the board, 'q' to quit.");
                         String temp2 = scan.nextLine();
                         if (temp2.equals("s")) {

@@ -104,6 +104,9 @@ public class Board {
                 return 1;
             } else if (board.get(temp) == 'm' || board.get(temp) == 'x') {
                 return 2;
+            }else if (board.get(temp) == '-') {
+                board.replace(temp, 'x');
+                return 0;
             }
         }
 
